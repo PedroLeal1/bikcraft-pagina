@@ -8,7 +8,7 @@ body {
   margin-top: 60px;
 }
 
-header {
+.header {
   display: grid;
   justify-items: center;
   gap: 60px;
@@ -49,12 +49,13 @@ p {
 }
 
 .menu a {
-  background-color: #ffffff;
+  display: block;
+  background: #ffffff;
   padding: 1rem 2rem;
   border-radius: 4px;
   color: #000000;
+  text-transform: uppercase;
   border: 2px solid #fff;
-  font-weight: bold;
 }
 
 .menu li a:hover {
@@ -67,8 +68,11 @@ p {
   max-width: 1000px;
 }
 
+.introducao h1 {
+  font-size: 2rem;
+}
 .introducao {
-  background-color: white;
+  background: #fff;
   padding: 40px;
   text-align: right;
   position: relative;
@@ -76,17 +80,6 @@ p {
   gap: 20px;
   align-content: center;
   justify-items: end;
-}
-
-.botao {
-  background-color: #ee2211;
-  color: #fff;
-  padding: 1rem 2rem;
-  border-radius: 4px;
-}
-
-.botao:hover {
-  background-color: #900;
 }
 
 .introducao::before {
@@ -97,6 +90,23 @@ p {
   position: absolute;
   top: 30px;
   right: -30px;
+}
+
+.introducao-cover img {
+  object-fit: cover;
+  height: 100%;
+}
+
+.botao {
+  background-color: #ee2211;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.botao:hover {
+  background-color: #900;
 }
 
 .subtitulo {
@@ -110,13 +120,14 @@ p {
 }
 .vantagens {
   background-color: #fff;
-  padding: 20px;
+  padding: 40px;
 }
 .vantagens-item {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 10px 20px;
   padding: 20px;
+  border-left: 4px solid transparent;
 }
 .vantagens-item p {
   grid-column: 2;
@@ -136,8 +147,33 @@ p {
   box-sizing: border-box;
 }
 
-ul,
-li {
-  margin: 20px;
-  padding: 0px;
+@media (max-width: 1000px) {
+  .conteudo-vantagem {
+    grid-template-columns: 1fr;
+  }
+  .subtitulo {
+    text-align: center;
+  }
+}
+@media (max-width: 600px) {
+  body {
+    gap: 30px;
+    margin-top: 20px;
+  }
+  .header {
+    gap: 30px;
+  }
+  .conteudo {
+    grid-template-columns: 1fr;
+  }
+  .introducao {
+    text-align: left;
+    justify-items: start;
+  }
+  .introducao::before {
+    display: none;
+  }
+  .subtitulo {
+    font-size: 3rem;
+  }
 }
