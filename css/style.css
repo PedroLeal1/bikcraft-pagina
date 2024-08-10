@@ -81,7 +81,10 @@ p {
   align-content: center;
   justify-items: end;
 }
-
+.introducao-cover {
+  width: 100%;
+  overflow: hidden; /* Para garantir que a imagem não transborde o contêiner */
+}
 .introducao::before {
   content: "";
   width: 60px;
@@ -93,8 +96,9 @@ p {
 }
 
 .introducao-cover img {
-  object-fit: cover;
-  height: 100%;
+  width: 100%; /* Faz com que a imagem ocupe toda a largura do contêiner */
+  height: auto; /* Mantém a proporção da imagem */
+  object-fit: cover; /* Faz com que a imagem cubra o contêiner sem distorção */
 }
 
 .botao {
@@ -121,6 +125,7 @@ p {
 .vantagens {
   background-color: #fff;
   padding: 40px;
+  margin: 0;
 }
 .vantagens-item {
   display: grid;
@@ -175,5 +180,11 @@ p {
   }
   .subtitulo {
     font-size: 3rem;
+  }
+}
+@media (max-width: 600px) {
+  .introducao-cover img {
+    height: 280px;
+    width: 100%;
   }
 }
