@@ -46,6 +46,8 @@ p {
   gap: 20px;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 0px;
+  padding: 1rem;
 }
 
 .menu a {
@@ -56,6 +58,7 @@ p {
   color: #000000;
   text-transform: uppercase;
   border: 2px solid #fff;
+  font-weight: bold;
 }
 
 .menu li a:hover {
@@ -83,7 +86,7 @@ p {
 }
 .introducao-cover {
   width: 100%;
-  overflow: hidden; /* Para garantir que a imagem não transborde o contêiner */
+  overflow: hidden;
 }
 .introducao::before {
   content: "";
@@ -96,9 +99,9 @@ p {
 }
 
 .introducao-cover img {
-  width: 100%; /* Faz com que a imagem ocupe toda a largura do contêiner */
-  height: auto; /* Mantém a proporção da imagem */
-  object-fit: cover; /* Faz com que a imagem cubra o contêiner sem distorção */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .botao {
@@ -186,5 +189,15 @@ p {
   .introducao-cover img {
     height: 280px;
     width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .menu {
+    gap: 5px;
+    padding: 0.5rem;
+  }
+  .menu a {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
   }
 }
